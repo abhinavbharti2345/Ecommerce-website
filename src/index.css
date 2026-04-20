@@ -1,0 +1,92 @@
+/* Satoshi Variable font from CDN */
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400,300&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-background text-charcoal font-sans antialiased;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold leading-tight;
+  }
+
+  a {
+    @apply no-underline;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-5 py-2.5 rounded-xl hover:bg-accent-dark active:scale-95 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 bg-transparent text-accent font-semibold px-5 py-2.5 rounded-xl border border-accent hover:bg-accent/10 active:scale-95 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 bg-transparent text-charcoal font-medium px-4 py-2 rounded-xl hover:bg-accent/10 hover:text-accent active:scale-95 transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-surface rounded-2xl shadow-card overflow-hidden transition-shadow duration-300 hover:shadow-card-hover;
+  }
+
+  .badge {
+    @apply inline-block px-2.5 py-0.5 text-xs font-semibold rounded-full uppercase tracking-wide;
+  }
+
+  .skeleton {
+    @apply bg-orange-100 animate-pulse rounded-xl;
+  }
+
+  .input-field {
+    @apply w-full bg-white border border-orange-200 rounded-xl px-4 py-2.5 text-sm text-charcoal placeholder-muted focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent transition-all duration-200;
+  }
+
+  .section-heading {
+    @apply text-2xl font-bold text-charcoal;
+  }
+
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Toastify overrides — orange theme */
+.Toastify__toast {
+  font-family: 'Satoshi', 'Inter', sans-serif;
+  border-radius: 12px !important;
+  font-size: 14px;
+}
+.Toastify__progress-bar--success {
+  background: #F36929 !important;
+}
+.Toastify__progress-bar--info {
+  background: #6B8C2A !important;
+}
+
+/* Custom scrollbar — warm orange tones */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF0E8;
+}
+::-webkit-scrollbar-thumb {
+  background: #F7894E;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F36929;
+}
